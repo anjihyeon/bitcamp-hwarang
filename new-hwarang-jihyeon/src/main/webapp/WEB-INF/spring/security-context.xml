@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="customAccessDenied"
+		class="hwarang.artg.security.CustomAccessDeniedHandler" />
+	<bean id="customLoginSuccess"
+		class="hwarang.artg.security.CustomLoginSuccessHandler" />
+	<!--<bean id="customPasswordEncoder" class="home.page.security.CustomNoOpPasswordEncoder"/> -->
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	<bean id="customUserDetailsService"
+		class="hwarang.artg.security.CustomUserDetailsService" />
+	<security:http>
+		<security:intercept-url pattern="/admin/*" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/alarm/*" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/exhibition/**/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/review/**/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/recommend/**/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/order/*" access="hasAnyRole('ROLE_USER')" />
+		<!-- Notice, QnA, FAQ, block security 설정 -->
+		<security:intercept-url pattern="/notice/noticeWrite" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/notice/noticeModify" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/notice/checkPw" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/notice/noticeListForManager" access="hasAnyRole('ROLE_ADMIN')" />
+		
+		<security:intercept-url pattern="/faq/faqWrite" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/faq/faqModify" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/faq/checkPw" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/faq/faqListForManager" access="hasAnyRole('ROLE_ADMIN')" />
+		
+		<security:intercept-url pattern="/qna/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/qna/qnaListForManager" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/qna/replyModify" access="hasAnyRole('ROLE_ADMIN')" />
+		
+		<security:intercept-url pattern="/report/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/report/reportListForManager" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/report/replyModify" access="hasAnyRole('ROLE_ADMIN')" />
+		
+		<security:intercept-url pattern="/block/*" access="hasAnyRole('ROLE_USER')" />
+		<security:intercept-url pattern="/block/blockListForManager" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/block/replyModify" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/block/blockMember" access="hasAnyRole('ROLE_ADMIN')" />
+		<security:form-login login-page="/member/loginForm"/>
+<!-- 		 authentication-success-handler-ref="customLoginSuccess" -->
+		<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" logout-success-url="/" />
+		<security:access-denied-handler ref="customAccessDenied" />
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
+		<security:csrf disabled="true"/>
+	</security:http>
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+			<security:password-encoder ref="bcryptPasswordEncoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans> 
