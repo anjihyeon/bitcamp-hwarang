@@ -2,7 +2,7 @@
 
 문화전시 정보를 공유하기 위한 포털사이트
 
-|||
+|구분|사용기술|
 |:------:|:------:|
 |OS 및 DB|Windows10, ORACLE|
 |사용 Tool|Eclipse, STS, sqlDeveloper, Githab|
