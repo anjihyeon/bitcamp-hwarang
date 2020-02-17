@@ -20,9 +20,8 @@
 - 커뮤니티 
 - 결제기능 및 관람 후기 작성
 
-
-![화랑메인화면](https://user-images.githubusercontent.com/53885622/74455432-a496e680-4ec8-11ea-8914-45b4d3668bb1.jpg)
-
 ## 참고
 
-https://www.youtube.com/watch?v=W-0skKgWLC4&t=952s
+![메인](https://user-images.githubusercontent.com/53885622/74632196-283f2480-51a2-11ea-8f3f-08938d411a5a.png)
+
+![메뉴](https://user-images.githubusercontent.com/53885622/74632194-270df780-51a2-11ea-9f95-3da6e11363fa.png)
