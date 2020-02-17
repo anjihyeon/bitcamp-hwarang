@@ -6,7 +6,7 @@
 |:------:|:------:|
 |OS 및 DB|Windows10, ORACLE|
 |사용 Tool|Eclipse, STS, sqlDeveloper, Githab|
-|프로그래밍 언어|JAVA, Servlet, JSP|
+|프로그래밍 언어|JAVA, JSP|
 |웹 표준 기술|HTML5, CSS, JavaScript, JQuery, Ajax|
 |프레임 워크|Spring, MyBatis, Bootstrap|
 |서버|AWS, tomcat|
