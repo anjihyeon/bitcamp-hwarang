@@ -34,3 +34,7 @@ DB에 비밀번호 저장시 암호화를 사용하여 보안을 강화했고 �
 ![메뉴](https://user-images.githubusercontent.com/53885622/74632194-270df780-51a2-11ea-9f95-3da6e11363fa.png)
 
 ![로그인](https://user-images.githubusercontent.com/53885622/74632354-87049e00-51a2-11ea-848e-b1246ad077f4.png)
+
+## 발표영상
+
+https://www.youtube.com/watch?v=W-0skKgWLC4&t=528s
