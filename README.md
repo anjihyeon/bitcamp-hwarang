@@ -31,9 +31,9 @@ DB에 비밀번호 저장시 암호화를 사용하여 보안을 강화했고 �
 
 ![메인](https://user-images.githubusercontent.com/53885622/74632196-283f2480-51a2-11ea-8f3f-08938d411a5a.png)
 
-![메뉴](https://user-images.githubusercontent.com/53885622/74632194-270df780-51a2-11ea-9f95-3da6e11363fa.png)
+![화랑로그인](https://user-images.githubusercontent.com/53885622/79632776-605fe500-819c-11ea-8d77-3d61ade5b11b.png)
 
-![로그인](https://user-images.githubusercontent.com/53885622/74632354-87049e00-51a2-11ea-848e-b1246ad077f4.png)
+![화랑마이페이지](https://user-images.githubusercontent.com/53885622/79632778-61911200-819c-11ea-956b-adafa3f80477.png)
 
 ## 발표영상
 https://www.youtube.com/watch?v=W-0skKgWLC4&t=528s
